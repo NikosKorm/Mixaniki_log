@@ -1,0 +1,174 @@
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import javax.swing.JFrame;
+import java.awt.Dimension;
+import javax.swing.JButton;
+import java.awt.Rectangle;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import java.awt.Font;
+
+public class AfterLogin extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+
+	private JPanel jContentPane = null;
+
+	private JButton jButtonView = null;
+
+	private JButton jButtonSearch = null;
+
+	private JButton jButtonContact = null;
+
+	private JTextField jTextFieldSearch = null;
+
+	private JButton jButtonLogout = null;
+
+	private JLabel jLabel = null;
+
+	private JLabel jLabel1 = null;
+
+	private JLabel jLabelFolder = null;
+
+	private JLabel jLabel2 = null;
+
+	/**
+	 * This is the default constructor
+	 */
+	public AfterLogin() {
+		super();
+		initialize();
+	}
+
+	/**
+	 * This method initializes this
+	 * 
+	 * @return void
+	 */
+	private void initialize() {
+		this.setSize(825, 583);
+		this.setContentPane(getJContentPane());
+		this.setTitle("JFrame");
+	}
+
+	/**
+	 * This method initializes jContentPane
+	 * 
+	 * @return javax.swing.JPanel
+	 */
+	private JPanel getJContentPane() {
+		if (jContentPane == null) {
+			jLabel2 = new JLabel();
+			jLabel2.setBounds(new Rectangle(599, 104, 84, 28));
+			jLabel2.setText("Αποτελέσματα");
+			jLabelFolder = new JLabel();
+			jLabelFolder.setBounds(new Rectangle(529, 135, 238, 209));
+			jLabelFolder.setText("");
+			jLabel1 = new JLabel();
+			jLabel1.setBounds(new Rectangle(312, 101, 157, 26));
+			jLabel1.setText("Έχετε συνδεθεί ως γιατρός");
+			jLabel = new JLabel();
+			jLabel.setBounds(new Rectangle(179, 24, 426, 61));
+			jLabel.setFont(new Font("Dialog", Font.BOLD, 18));
+			jLabel.setText("ΣΥΣΤΗΜΑ ΔΙΑΧΕΙΡΙΣΗΣ ΙΑΤΡΙΚΟΥ ΦΑΚΕΛΟΥ");
+			jContentPane = new JPanel();
+			jContentPane.setLayout(null);
+			jContentPane.add(getJButtonView(), null);
+			jContentPane.add(getJButtonSearch(), null);
+			jContentPane.add(getJButtonContact(), null);
+			jContentPane.add(getJTextFieldSearch(), null);
+			jContentPane.add(getJButtonLogout(), null);
+			jContentPane.add(jLabel, null);
+			jContentPane.add(jLabel1, null);
+			jContentPane.add(jLabelFolder, null);
+			jContentPane.add(jLabel2, null);
+		}
+		jLabel2.setVisible(false);
+		jLabelFolder.setVisible(false);
+		return jContentPane;
+	}
+
+	/**
+	 * This method initializes jButtonView	
+	 * 	
+	 * @return javax.swing.JButton	
+	 */
+	private JButton getJButtonView() {
+		if (jButtonView == null) {
+			jButtonView = new JButton();
+			jButtonView.setBounds(new Rectangle(555, 363, 184, 56));
+			jButtonView.setText("Προβολή φακέλου");
+		}
+		jButtonView.setVisible(false);
+		return jButtonView;
+	}
+
+	/**
+	 * This method initializes jButtonSearch	
+	 * 	
+	 * @return javax.swing.JButton	
+	 */
+	private JButton getJButtonSearch() {
+		if (jButtonSearch == null) {
+			jButtonSearch = new JButton();
+			jButtonSearch.setBounds(new Rectangle(285, 203, 184, 47));
+			jButtonSearch.setText("Αναζήτηση ιστορικού");
+			jButtonSearch.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					jButtonView.setVisible(true); // TODO Auto-generated Event stub actionPerformed()
+					jLabelFolder.setVisible(true);
+					jLabel2.setVisible(true);
+				}
+			});
+		}
+		return jButtonSearch;
+	}
+
+	/**
+	 * This method initializes jButtonContact	
+	 * 	
+	 * @return javax.swing.JButton	
+	 */
+	private JButton getJButtonContact() {
+		if (jButtonContact == null) {
+			jButtonContact = new JButton();
+			jButtonContact.setBounds(new Rectangle(24, 375, 207, 63));
+			jButtonContact.setText("Επικοινωνία με Διαχειριστή");
+		}
+		return jButtonContact;
+	}
+
+	/**
+	 * This method initializes jTextFieldSearch	
+	 * 	
+	 * @return javax.swing.JTextField	
+	 */
+	private JTextField getJTextFieldSearch() {
+		if (jTextFieldSearch == null) {
+			jTextFieldSearch = new JTextField();
+			jTextFieldSearch.setBounds(new Rectangle(26, 211, 241, 39));
+			jTextFieldSearch.setText("");
+		}
+		return jTextFieldSearch;
+	}
+
+	/**
+	 * This method initializes jButtonLogout	
+	 * 	
+	 * @return javax.swing.JButton	
+	 */
+	private JButton getJButtonLogout() {
+		if (jButtonLogout == null) {
+			jButtonLogout = new JButton();
+			jButtonLogout.setBounds(new Rectangle(627, 458, 137, 58));
+			jButtonLogout.setText("LOGOUT");
+			jButtonLogout.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					// pigainei pisw stin forma Login; // TODO Auto-generated Event stub actionPerformed()
+				}
+			});
+		}
+		return jButtonLogout;
+	}
+
+}  //  @jve:decl-index=0:visual-constraint="10,10"
